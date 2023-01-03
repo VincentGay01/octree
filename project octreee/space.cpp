@@ -1,7 +1,7 @@
 #include <space.h>
 #include <iostream>
 #include <list>
-
+//changer en vecteur pour corentin
 space::space(point n1,point n2, point n3 ,point n4)
 {
     list<point> list;
