@@ -1,7 +1,10 @@
+#include <iostream>
+
 class point
 {
 private:
     /* data */
+    string np;
     float x ;
     float y ;
     float z ;
@@ -11,7 +14,8 @@ public:
   float getCoordX();
   float getCoordY();
   float getCoordZ();
-  point getMidlle(point prem,point sec);
+  string getname();
+  point getMidlle(point prem);
   float getDistance(point p2);
     ~point();
 };
