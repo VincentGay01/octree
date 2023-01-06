@@ -27,7 +27,8 @@ void space::subdivide()
 {
 
     vector<point> listpoint;
-    
+    vector<point> list4space;
+    vector<point> listspace;
     int distmin=2147483647;
     for(int i=1;i<=this->listPointCoin.size();i++)
     {    
@@ -54,6 +55,17 @@ void space::subdivide()
             }
         }
     }
-    
+
+    for(auto it = listpoint.rbegin(); it != listpoint.rend(); ++it)
+    {
+        for(int i=;i<listpoint.size();i++)
+        {
+            if(it.getDistance(listpoint[i])==distmin/2||it.getDistance(listpoint[i])==2*(distmin*distmin))
+            {
+
+            }
+        }
+
+    }
     
 } 
