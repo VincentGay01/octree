@@ -1,7 +1,6 @@
 #include <space.h>
 #include <point.h>
-#include <iostream>
-#include <vector>
+
 //changer en vecteur pour corentin
 space::space(vector<point> listpoint,string spacename)
 {
@@ -40,7 +39,8 @@ void space::subdivide()
         { 
             if(ir.getDistance(this->listPointCoin[i])!=0)
             {
-                if(listpoint.size()!=0){
+                if(listpoint.size()!=0)
+                {
                     for(auto it = listpoint.rbegin(); it != listpoint.rend(); ++it)
                     {
                         if(ir.getMiddle(this->listPointCoin[i]).getDistance(it))
@@ -57,23 +57,23 @@ void space::subdivide()
         }
     }
 
-     vector<point> list4space;
-     string name;
-    for(auto it = listpoint.rbegin(); it != listpoint.rend(); ++it)
+     
+    
+    for(auto it = listpointCoin.rbegin(); it != listpointCoin.rend(); ++it)
     {
+        vector<point> list4space;
+         string name;
         list4space.push_back(it);
-        for(int i=;i<listpoint.size();i++)
+
+        for(auto it2 = listpointCoin.rbegin(); it2 != listpointCoin.rend(); ++it2)
         {
-            if(it.getDistance(listpoint[i])==distmin/2||it.getDistance(listpoint[i])==2*(distmin*distmin))
+            if(it.getDistance(it2)==distmin/2||it.getDistance(it2)==2*(distmin*distmin))
             {
-                list4space.push_back(i);
+                list4space.push_back(it2);
+                name+="/"+it2.getname();
             }
         }
-        if(listspace.size()==0)
-        {   
-
-            listspace.push_back(space(list4space,))
-        }
+            listspace.push_back(space(list4space,name));
     }
-    
+    this->listSubspace=listspace;
 } 

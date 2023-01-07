@@ -1,5 +1,4 @@
 #include <point.h>
-#include <cmath>
 
  point::point(float x,float y,float z,string np)
 {

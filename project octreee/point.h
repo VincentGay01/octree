@@ -1,5 +1,5 @@
+#include <cmath>
 #include <iostream>
-
 class point
 {
 private:
