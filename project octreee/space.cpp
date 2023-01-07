@@ -1,5 +1,4 @@
 #include <space.h>
-#include <point.h>
 
 //changer en vecteur pour corentin
 space::space(vector<point> listpoint,string spacename)
@@ -20,9 +19,7 @@ String space::getspacename()
 
 void space::subdivide()
 {
-
     vector<point> listpoint;
-   
     vector<point> listspace;
     int distmin=2147483647;
     for(int i=1;i<=this->listPointCoin.size();i++)
@@ -32,7 +29,6 @@ void space::subdivide()
         distmin=this->list[0].getDistance(this->listPointCoin[i]);
        }
     }
-    
     for(auto ir = this->listPointCoin.rbegin(); ir != this->listPointCoin.rend(); ++ir)
     {
         for(int i=;i<this->listPointCoin.size();i++)
@@ -56,9 +52,6 @@ void space::subdivide()
             }
         }
     }
-
-     
-    
     for(auto it = listpointCoin.rbegin(); it != listpointCoin.rend(); ++it)
     {
         vector<point> list4space;
@@ -76,4 +69,15 @@ void space::subdivide()
             listspace.push_back(space(list4space,name));
     }
     this->listSubspace=listspace;
-} 
+}
+
+
+vector<space> getSubSpace()
+{
+    return this->listSubspace;
+}
+void setSubSpace(vector<space> listSubspace )
+{
+    this->listSubspace= listSubspace;
+}
+
